@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startNoteFragment">
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.hfad.notesapp.roomservice.screens.addNote.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_startNoteFragment"
+            app:destination="@id/startNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNoteFragment"
+        android:name="com.hfad.notesapp.roomservice.screens.detail.DetailNoteFragment"
+        android:label="fragment_detail_note"
+        tools:layout="@layout/fragment_detail_note" >
+        <action
+            android:id="@+id/action_detailNoteFragment_to_startNoteFragment"
+            app:destination="@id/startNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startNoteFragment"
+        android:name="com.hfad.notesapp.roomservice.screens.startNote.StartNoteFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startNoteFragment_to_detailNoteFragment"
+            app:destination="@id/detailNoteFragment" />
+        <action
+            android:id="@+id/action_startNoteFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+</navigation>
